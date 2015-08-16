@@ -1,0 +1,21 @@
+//- false expressions
+if ""
+  p empty string
+if emptyList
+  p empty list
+if 0
+  p zero
+if false
+  p bool false
+if missingVariable
+  p missing variable
+if missingVariable && true
+  p missing variable and true
+if emptyList && true
+  p empty list and true
+
+//- true expressions
+if list
+  p non empty list
+if list && list.size() > 0
+  p non empty list and size

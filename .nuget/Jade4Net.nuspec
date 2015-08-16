@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Jade4Net</id>
+    <title>Jade4Net</title>
+    <version>0.0.1</version>
+    <authors>Jade4Net Project Contributors</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/rnrn/Jade4Net</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/rnrn/Jade4Net/master/LICENSE</licenseUrl>
+    <iconUrl>https://raw.github.com/rnrn/Jade4Net/master/icon.png</iconUrl>
+    <summary>Jade implementation written in C#</summary>
+    <description>Jade implementation written in C#</description>
+    <releaseNotes>https://github.com/rnrn/Jade4Net/blob/master/README.md</releaseNotes>
+    <tags>jade</tags>
+  </metadata>
+  <files>
+    <file src="..\Source\Jade4Net\bin\Release\Jade4Net.dll"
+          target="lib\net45" />
+  </files>
+</package>

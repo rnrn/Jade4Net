@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47307BA2-D121-462F-8972-7CC729CD961E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jade</RootNamespace>
+    <AssemblyName>Jade4Net</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Esprima.NET">
+      <HintPath>..\..\..\Esprima.Net\Esprima.NET\bin\Debug\Esprima.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownDeep, Version=1.5.4615.26275, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MarkdownDeep.NET.1.5\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compiler\Chars.cs" />
+    <Compile Include="Compiler\Compiler.cs" />
+    <Compile Include="Compiler\IndentWriter.cs" />
+    <Compile Include="Compiler\StringUtils.cs" />
+    <Compile Include="Compiler\Utils.cs" />
+    <Compile Include="Exceptions\JadeLexerException.cs" />
+    <Compile Include="Exceptions\JadeException.cs" />
+    <Compile Include="Exceptions\JadeCompilerException.cs" />
+    <Compile Include="Exceptions\ExpressionException.cs" />
+    <Compile Include="Exceptions\JadeParserException.cs" />
+    <Compile Include="Filters\CachingFilter.cs" />
+    <Compile Include="Filters\CDATAFilter.cs" />
+    <Compile Include="Filters\PlainFilter.cs" />
+    <Compile Include="Filters\JsFilter.cs" />
+    <Compile Include="Filters\CssFilter.cs" />
+    <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Filters\MarkdownFilter.cs" />
+    <Compile Include="Jade4Net.cs" />
+    <Compile Include="Expression\BooleanUtil.cs" />
+    <Compile Include="Expression\ExpressionHandler.cs" />
+    <Compile Include="JadeConfiguration.cs" />
+    <Compile Include="Jexl\MapContext.cs" />
+    <Compile Include="Jexl\JadeIntrospect.cs" />
+    <Compile Include="Jexl\JadeJexlArithmetic.cs" />
+    <Compile Include="Jexl\JadeJexlEngine.cs" />
+    <Compile Include="Jexl\JadeJexlInterpreter.cs" />
+    <Compile Include="Lexer\Assignment.cs" />
+    <Compile Include="Lexer\AttributeLexer.cs" />
+    <Compile Include="Lexer\Each.cs" />
+    <Compile Include="Lexer\JadeScanner.cs" />
+    <Compile Include="Lexer\JadeLexer.cs" />
+    <Compile Include="Lexer\Tokens\Attribute.cs" />
+    <Compile Include="Lexer\Tokens\Block.cs" />
+    <Compile Include="Lexer\Tokens\BufferedComment.cs" />
+    <Compile Include="Lexer\Tokens\CaseToken.cs" />
+    <Compile Include="Lexer\Tokens\Doctypes.cs" />
+    <Compile Include="Lexer\Tokens\Colon.cs" />
+    <Compile Include="Lexer\Tokens\Comment.cs" />
+    <Compile Include="Lexer\Tokens\CssClass.cs" />
+    <Compile Include="Lexer\Tokens\CssId.cs" />
+    <Compile Include="Lexer\Tokens\Default.cs" />
+    <Compile Include="Lexer\Tokens\Deferred.cs" />
+    <Compile Include="Lexer\Tokens\Doctype.cs" />
+    <Compile Include="Lexer\Tokens\Dot.cs" />
+    <Compile Include="Lexer\Tokens\Else.cs" />
+    <Compile Include="Lexer\Tokens\ElseIf.cs" />
+    <Compile Include="Lexer\Tokens\Eos.cs" />
+    <Compile Include="Lexer\Tokens\Expression.cs" />
+    <Compile Include="Lexer\Tokens\ExtendsToken.cs" />
+    <Compile Include="Lexer\Tokens\Filter.cs" />
+    <Compile Include="Lexer\Tokens\ForTag.cs" />
+    <Compile Include="Lexer\Tokens\If.cs" />
+    <Compile Include="Lexer\Tokens\Include.cs" />
+    <Compile Include="Lexer\Tokens\Indent.cs" />
+    <Compile Include="Lexer\Tokens\Mixin.cs" />
+    <Compile Include="Lexer\Tokens\MixinInject.cs" />
+    <Compile Include="Lexer\Tokens\Newline.cs" />
+    <Compile Include="Lexer\Tokens\Outdent.cs" />
+    <Compile Include="Lexer\Tokens\Tag.cs" />
+    <Compile Include="Lexer\Tokens\Text.cs" />
+    <Compile Include="Lexer\Tokens\Token.cs" />
+    <Compile Include="Lexer\Tokens\UnbufferedComment.cs" />
+    <Compile Include="Lexer\Tokens\When.cs" />
+    <Compile Include="Lexer\Tokens\While.cs" />
+    <Compile Include="Lexer\Tokens\Yield.cs" />
+    <Compile Include="Model\JadeModel.cs" />
+    <Compile Include="Parser\BlockCommentNode.cs" />
+    <Compile Include="Parser\CommentNode.cs" />
+    <Compile Include="Parser\FileNameBuilder.cs" />
+    <Compile Include="Parser\Nodes\AssigmentNode.cs" />
+    <Compile Include="Parser\Nodes\AttributedNode.cs" />
+    <Compile Include="Parser\Nodes\BlockNode.cs" />
+    <Compile Include="Parser\Nodes\CaseNode.cs" />
+    <Compile Include="Parser\Nodes\CaseConditionNode.cs" />
+    <Compile Include="Parser\Nodes\EachNode.cs" />
+    <Compile Include="Parser\Nodes\DoctypeNode.cs" />
+    <Compile Include="Parser\Nodes\ConditionalNode.cs" />
+    <Compile Include="Parser\Nodes\FilterNode.cs" />
+    <Compile Include="Parser\Nodes\IfConditionNode.cs" />
+    <Compile Include="Parser\Nodes\LiteralNode.cs" />
+    <Compile Include="Parser\Nodes\TagNode.cs" />
+    <Compile Include="Parser\Nodes\ExpressionNode.cs" />
+    <Compile Include="Parser\Nodes\ExpressionString.cs" />
+    <Compile Include="Parser\Nodes\MixinInjectNode.cs" />
+    <Compile Include="Parser\Nodes\MixinNode.cs" />
+    <Compile Include="Parser\Nodes\Node.cs" />
+    <Compile Include="Parser\Nodes\TextNode.cs" />
+    <Compile Include="Parser\Nodes\WhileNode.cs" />
+    <Compile Include="Parser\JadeParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\ClasspathTemplateLoader.cs" />
+    <Compile Include="Template\FileTemplateLoader.cs" />
+    <Compile Include="Template\JadeTemplate.cs" />
+    <Compile Include="Template\ReaderTemplateLoader.cs" />
+    <Compile Include="Template\TemplateLoader.cs" />
+    <Compile Include="Util\ArgumentSplitter.cs" />
+    <Compile Include="Util\LinkedListExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Exceptions\ExpressionException.java" />
+    <Content Include="Exceptions\JadeCompilerException.java" />
+    <Content Include="Exceptions\JadeException.java" />
+    <Content Include="Exceptions\JadeLexerException.java" />
+    <Content Include="Exceptions\JadeParserException.java" />
+    <Content Include="Expression\BooleanUtil.java" />
+    <Content Include="Expression\ExpressionHandler.java" />
+    <Content Include="Lexer\Assignment.java" />
+    <Content Include="Lexer\AttributeLexer.java" />
+    <Content Include="Lexer\Each.java" />
+    <Content Include="Lexer\Lexer.java" />
+    <Content Include="Lexer\Scanner.java" />
+    <Content Include="Lexer\Tokens\Attribute.java" />
+    <Content Include="Lexer\Tokens\Block.java" />
+    <Content Include="Lexer\Tokens\BufferedComment.java" />
+    <Content Include="Lexer\Tokens\CaseToken.java" />
+    <Content Include="Lexer\Tokens\Colon.java" />
+    <Content Include="Lexer\Tokens\Comment.java" />
+    <Content Include="Lexer\Tokens\CssClass.java" />
+    <Content Include="Lexer\Tokens\CssId.java" />
+    <Content Include="Lexer\Tokens\Default.java" />
+    <Content Include="Lexer\Tokens\Deferred.java" />
+    <Content Include="Lexer\Tokens\Doctype.java" />
+    <Content Include="Lexer\Tokens\Doctypes.java" />
+    <Content Include="Lexer\Tokens\Dot.java" />
+    <Content Include="Lexer\Tokens\Else.java" />
+    <Content Include="Lexer\Tokens\ElseIf.java" />
+    <Content Include="Lexer\Tokens\Eos.java" />
+    <Content Include="Lexer\Tokens\Expression.java" />
+    <Content Include="Lexer\Tokens\ExtendsToken.java" />
+    <Content Include="Lexer\Tokens\Filter.java" />
+    <Content Include="Lexer\Tokens\ForTag.java" />
+    <Content Include="Lexer\Tokens\If.java" />
+    <Content Include="Lexer\Tokens\Include.java" />
+    <Content Include="Lexer\Tokens\Indent.java" />
+    <Content Include="Lexer\Tokens\Mixin.java" />
+    <Content Include="Lexer\Tokens\MixinInject.java" />
+    <Content Include="Lexer\Tokens\Newline.java" />
+    <Content Include="Lexer\Tokens\Outdent.java" />
+    <Content Include="Lexer\Tokens\Tag.java" />
+    <Content Include="Lexer\Tokens\Text.java" />
+    <Content Include="Lexer\Tokens\Token.java" />
+    <Content Include="Lexer\Tokens\UnbufferedComment.java" />
+    <Content Include="Lexer\Tokens\When.java" />
+    <Content Include="Lexer\Tokens\While.java" />
+    <Content Include="Lexer\Tokens\Yield.java" />
+    <Content Include="Parser\Nodes\AssigmentNode.java" />
+    <Content Include="Parser\Nodes\AttributedNode.java" />
+    <Content Include="Parser\Nodes\BlockNode.java" />
+    <Content Include="Parser\Nodes\CaseConditionNode.java" />
+    <Content Include="Parser\Nodes\CaseNode.java" />
+    <Content Include="Parser\Nodes\ConditionalNode.java" />
+    <Content Include="Parser\Nodes\DoctypeNode.java" />
+    <Content Include="Parser\Nodes\EachNode.java" />
+    <Content Include="Parser\Nodes\ExpressionNode.java" />
+    <Content Include="Parser\Nodes\ExpressionString.java" />
+    <Content Include="Parser\Nodes\FilterNode.java" />
+    <Content Include="Parser\Nodes\IfConditionNode.java" />
+    <Content Include="Parser\Nodes\LiteralNode.java" />
+    <Content Include="Parser\Nodes\MixinInjectNode.java" />
+    <Content Include="Parser\Nodes\MixinNode.java" />
+    <Content Include="Parser\Nodes\Node.java" />
+    <Content Include="Parser\Nodes\TagNode.java" />
+    <Content Include="Parser\Nodes\TextNode.java" />
+    <Content Include="Parser\Nodes\WhileNode.java" />
+    <Content Include="Util\ArgumentSplitter.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

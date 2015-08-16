@@ -1,0 +1,35 @@
+
+
+mixin form(method)
+  form(method=method)
+    input(type='hidden', name='_csrf')
+    block
+
+
+html
+  body
+    +form('GET')
+      input(name="field1")
+
+html
+  body
+    +form('POST')
+      input(name="field2")
+
+html
+  body
+    +form('POST')
+
+mixin bar()
+  #bar
+    block
+
+mixin foo()
+  #foo
+    +bar
+      block
+
++foo
+  p one
+  p two
+  p three
